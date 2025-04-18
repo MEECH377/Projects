@@ -1,0 +1,13 @@
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\bin\Debug\Librarydb.mdf
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\bin\Debug\Librarydb_log.ldf
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\bin\Debug\Library_System.exe.config
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\bin\Debug\Library_System.exe
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\bin\Debug\Library_System.pdb
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\obj\Debug\Library_System.csproj.AssemblyReference.cache
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\obj\Debug\Library_System.Form1.resources
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\obj\Debug\Library_System.FrmBookManager.resources
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\obj\Debug\Library_System.Properties.Resources.resources
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\obj\Debug\Library_System.csproj.GenerateResource.cache
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\obj\Debug\Library_System.csproj.CoreCompileInputs.cache
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\obj\Debug\Library_System.exe
+C:\Users\user\Documents\GitHub\Projects\Library_System\Library_System\obj\Debug\Library_System.pdb
