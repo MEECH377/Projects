@@ -54,5 +54,31 @@ namespace Library_System
                 MessageBox.Show($"Error displaying books {ex.Message}");
             }
         }
+
+        private void btnAdd_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                using(SqlConnection cnn = new SqlConnection(connectionString))
+                {
+                    cnn.Open();
+                    string sql = @"INSERT INTO Books(Title, Author, Genre, isAvailable) VALUES (@Title, @Author, @Genre, @isAvailable)";
+                    SqlCommand command = new SqlCommand(sql, cnn);
+                    command.Parameters.AddWithValue("@Title", txtTitle.Text);
+                    command.Parameters.AddWithValue("@Author", txtAuthor.Text);
+                    command.Parameters.AddWithValue("@Genre", txtGenre.Text);
+                    command.Parameters.AddWithValue("@isAvailable", cbxAvailable.Checked);
+
+                    command.ExecuteNonQuery();
+                    MessageBox.Show("Book Added Successfully!");
+                    DisplayBooks();
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error Adding Book{ex.Message}");
+            }
+        }
     }
 }

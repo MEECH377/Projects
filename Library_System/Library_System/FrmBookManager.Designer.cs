@@ -33,15 +33,18 @@ namespace Library_System
             this.lblSearch = new System.Windows.Forms.Label();
             this.txtSearch = new System.Windows.Forms.TextBox();
             this.gbxAdd = new System.Windows.Forms.GroupBox();
-            this.lblTitle = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.lblAuthor = new System.Windows.Forms.Label();
-            this.lblGenre = new System.Windows.Forms.Label();
-            this.txtAuthor = new System.Windows.Forms.TextBox();
-            this.txtGenre = new System.Windows.Forms.TextBox();
-            this.cbxAvailable = new System.Windows.Forms.CheckBox();
             this.btnAdd = new System.Windows.Forms.Button();
+            this.cbxAvailable = new System.Windows.Forms.CheckBox();
+            this.txtGenre = new System.Windows.Forms.TextBox();
+            this.txtAuthor = new System.Windows.Forms.TextBox();
+            this.lblGenre = new System.Windows.Forms.Label();
+            this.lblAuthor = new System.Windows.Forms.Label();
+            this.txtTitle = new System.Windows.Forms.TextBox();
+            this.lblTitle = new System.Windows.Forms.Label();
             this.gbxEdit = new System.Windows.Forms.GroupBox();
+            this.txtGenreEdit = new System.Windows.Forms.TextBox();
+            this.lblGenreEdit = new System.Windows.Forms.Label();
+            this.btnDelete = new System.Windows.Forms.Button();
             this.btnUpdate = new System.Windows.Forms.Button();
             this.cbxAvailableEdit = new System.Windows.Forms.CheckBox();
             this.txtAuthorEdit = new System.Windows.Forms.TextBox();
@@ -50,9 +53,6 @@ namespace Library_System
             this.lblTitleEdit = new System.Windows.Forms.Label();
             this.txtBookId = new System.Windows.Forms.TextBox();
             this.lblBokId = new System.Windows.Forms.Label();
-            this.btnDelete = new System.Windows.Forms.Button();
-            this.lblGenreEdit = new System.Windows.Forms.Label();
-            this.txtGenreEdit = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.gbxAdd.SuspendLayout();
             this.gbxEdit.SuspendLayout();
@@ -61,9 +61,9 @@ namespace Library_System
             // dgvBooks
             // 
             this.dgvBooks.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBooks.Location = new System.Drawing.Point(12, 54);
+            this.dgvBooks.Location = new System.Drawing.Point(12, 36);
             this.dgvBooks.Name = "dgvBooks";
-            this.dgvBooks.Size = new System.Drawing.Size(776, 203);
+            this.dgvBooks.Size = new System.Drawing.Size(873, 221);
             this.dgvBooks.TabIndex = 0;
             // 
             // lblSearch
@@ -90,7 +90,7 @@ namespace Library_System
             this.gbxAdd.Controls.Add(this.txtAuthor);
             this.gbxAdd.Controls.Add(this.lblGenre);
             this.gbxAdd.Controls.Add(this.lblAuthor);
-            this.gbxAdd.Controls.Add(this.textBox2);
+            this.gbxAdd.Controls.Add(this.txtTitle);
             this.gbxAdd.Controls.Add(this.lblTitle);
             this.gbxAdd.Location = new System.Drawing.Point(12, 263);
             this.gbxAdd.Name = "gbxAdd";
@@ -99,53 +99,15 @@ namespace Library_System
             this.gbxAdd.TabStop = false;
             this.gbxAdd.Text = "ADD";
             // 
-            // lblTitle
+            // btnAdd
             // 
-            this.lblTitle.AutoSize = true;
-            this.lblTitle.Location = new System.Drawing.Point(22, 34);
-            this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(40, 13);
-            this.lblTitle.TabIndex = 2;
-            this.lblTitle.Text = "TITLE:";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Location = new System.Drawing.Point(104, 31);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 20);
-            this.textBox2.TabIndex = 3;
-            // 
-            // lblAuthor
-            // 
-            this.lblAuthor.AutoSize = true;
-            this.lblAuthor.Location = new System.Drawing.Point(22, 67);
-            this.lblAuthor.Name = "lblAuthor";
-            this.lblAuthor.Size = new System.Drawing.Size(56, 13);
-            this.lblAuthor.TabIndex = 4;
-            this.lblAuthor.Text = "AUTHOR:";
-            // 
-            // lblGenre
-            // 
-            this.lblGenre.AutoSize = true;
-            this.lblGenre.Location = new System.Drawing.Point(22, 101);
-            this.lblGenre.Name = "lblGenre";
-            this.lblGenre.Size = new System.Drawing.Size(48, 13);
-            this.lblGenre.TabIndex = 5;
-            this.lblGenre.Text = "GENRE:";
-            // 
-            // txtAuthor
-            // 
-            this.txtAuthor.Location = new System.Drawing.Point(104, 64);
-            this.txtAuthor.Name = "txtAuthor";
-            this.txtAuthor.Size = new System.Drawing.Size(100, 20);
-            this.txtAuthor.TabIndex = 6;
-            // 
-            // txtGenre
-            // 
-            this.txtGenre.Location = new System.Drawing.Point(104, 98);
-            this.txtGenre.Name = "txtGenre";
-            this.txtGenre.Size = new System.Drawing.Size(100, 20);
-            this.txtGenre.TabIndex = 7;
+            this.btnAdd.Location = new System.Drawing.Point(104, 201);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(75, 23);
+            this.btnAdd.TabIndex = 10;
+            this.btnAdd.Text = "ADD";
+            this.btnAdd.UseVisualStyleBackColor = true;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
             // 
             // cbxAvailable
             // 
@@ -157,14 +119,53 @@ namespace Library_System
             this.cbxAvailable.Text = "Available";
             this.cbxAvailable.UseVisualStyleBackColor = true;
             // 
-            // btnAdd
+            // txtGenre
             // 
-            this.btnAdd.Location = new System.Drawing.Point(104, 201);
-            this.btnAdd.Name = "btnAdd";
-            this.btnAdd.Size = new System.Drawing.Size(75, 23);
-            this.btnAdd.TabIndex = 10;
-            this.btnAdd.Text = "ADD";
-            this.btnAdd.UseVisualStyleBackColor = true;
+            this.txtGenre.Location = new System.Drawing.Point(104, 98);
+            this.txtGenre.Name = "txtGenre";
+            this.txtGenre.Size = new System.Drawing.Size(100, 20);
+            this.txtGenre.TabIndex = 7;
+            // 
+            // txtAuthor
+            // 
+            this.txtAuthor.Location = new System.Drawing.Point(104, 64);
+            this.txtAuthor.Name = "txtAuthor";
+            this.txtAuthor.Size = new System.Drawing.Size(100, 20);
+            this.txtAuthor.TabIndex = 6;
+            // 
+            // lblGenre
+            // 
+            this.lblGenre.AutoSize = true;
+            this.lblGenre.Location = new System.Drawing.Point(22, 101);
+            this.lblGenre.Name = "lblGenre";
+            this.lblGenre.Size = new System.Drawing.Size(48, 13);
+            this.lblGenre.TabIndex = 5;
+            this.lblGenre.Text = "GENRE:";
+            // 
+            // lblAuthor
+            // 
+            this.lblAuthor.AutoSize = true;
+            this.lblAuthor.Location = new System.Drawing.Point(22, 67);
+            this.lblAuthor.Name = "lblAuthor";
+            this.lblAuthor.Size = new System.Drawing.Size(56, 13);
+            this.lblAuthor.TabIndex = 4;
+            this.lblAuthor.Text = "AUTHOR:";
+            // 
+            // txtTitle
+            // 
+            this.txtTitle.Location = new System.Drawing.Point(104, 31);
+            this.txtTitle.Name = "txtTitle";
+            this.txtTitle.Size = new System.Drawing.Size(100, 20);
+            this.txtTitle.TabIndex = 3;
+            // 
+            // lblTitle
+            // 
+            this.lblTitle.AutoSize = true;
+            this.lblTitle.Location = new System.Drawing.Point(22, 34);
+            this.lblTitle.Name = "lblTitle";
+            this.lblTitle.Size = new System.Drawing.Size(40, 13);
+            this.lblTitle.TabIndex = 2;
+            this.lblTitle.Text = "TITLE:";
             // 
             // gbxEdit
             // 
@@ -185,6 +186,31 @@ namespace Library_System
             this.gbxEdit.TabIndex = 4;
             this.gbxEdit.TabStop = false;
             this.gbxEdit.Text = "EDIT";
+            // 
+            // txtGenreEdit
+            // 
+            this.txtGenreEdit.Location = new System.Drawing.Point(104, 124);
+            this.txtGenreEdit.Name = "txtGenreEdit";
+            this.txtGenreEdit.Size = new System.Drawing.Size(100, 20);
+            this.txtGenreEdit.TabIndex = 13;
+            // 
+            // lblGenreEdit
+            // 
+            this.lblGenreEdit.AutoSize = true;
+            this.lblGenreEdit.Location = new System.Drawing.Point(22, 127);
+            this.lblGenreEdit.Name = "lblGenreEdit";
+            this.lblGenreEdit.Size = new System.Drawing.Size(48, 13);
+            this.lblGenreEdit.TabIndex = 12;
+            this.lblGenreEdit.Text = "GENRE:";
+            // 
+            // btnDelete
+            // 
+            this.btnDelete.Location = new System.Drawing.Point(194, 201);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(75, 23);
+            this.btnDelete.TabIndex = 11;
+            this.btnDelete.Text = "DELETE";
+            this.btnDelete.UseVisualStyleBackColor = true;
             // 
             // btnUpdate
             // 
@@ -253,31 +279,6 @@ namespace Library_System
             this.lblBokId.TabIndex = 2;
             this.lblBokId.Text = "BOOK ID:";
             // 
-            // btnDelete
-            // 
-            this.btnDelete.Location = new System.Drawing.Point(194, 201);
-            this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(75, 23);
-            this.btnDelete.TabIndex = 11;
-            this.btnDelete.Text = "DELETE";
-            this.btnDelete.UseVisualStyleBackColor = true;
-            // 
-            // lblGenreEdit
-            // 
-            this.lblGenreEdit.AutoSize = true;
-            this.lblGenreEdit.Location = new System.Drawing.Point(22, 127);
-            this.lblGenreEdit.Name = "lblGenreEdit";
-            this.lblGenreEdit.Size = new System.Drawing.Size(48, 13);
-            this.lblGenreEdit.TabIndex = 12;
-            this.lblGenreEdit.Text = "GENRE:";
-            // 
-            // txtGenreEdit
-            // 
-            this.txtGenreEdit.Location = new System.Drawing.Point(104, 124);
-            this.txtGenreEdit.Name = "txtGenreEdit";
-            this.txtGenreEdit.Size = new System.Drawing.Size(100, 20);
-            this.txtGenreEdit.TabIndex = 13;
-            // 
             // FrmBookManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -313,7 +314,7 @@ namespace Library_System
         private System.Windows.Forms.TextBox txtAuthor;
         private System.Windows.Forms.Label lblGenre;
         private System.Windows.Forms.Label lblAuthor;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtTitle;
         private System.Windows.Forms.Label lblTitle;
         private System.Windows.Forms.GroupBox gbxEdit;
         private System.Windows.Forms.TextBox txtGenreEdit;
