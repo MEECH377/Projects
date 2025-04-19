@@ -51,8 +51,8 @@ namespace Library_System
             this.txtTitleEdit = new System.Windows.Forms.TextBox();
             this.lblAuthorEdit = new System.Windows.Forms.Label();
             this.lblTitleEdit = new System.Windows.Forms.Label();
-            this.txtBookId = new System.Windows.Forms.TextBox();
             this.lblBokId = new System.Windows.Forms.Label();
+            this.cmbBookId = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBooks)).BeginInit();
             this.gbxAdd.SuspendLayout();
             this.gbxEdit.SuspendLayout();
@@ -81,6 +81,7 @@ namespace Library_System
             this.txtSearch.Name = "txtSearch";
             this.txtSearch.Size = new System.Drawing.Size(100, 20);
             this.txtSearch.TabIndex = 2;
+            this.txtSearch.TextChanged += new System.EventHandler(this.txtSearch_TextChanged);
             // 
             // gbxAdd
             // 
@@ -169,6 +170,7 @@ namespace Library_System
             // 
             // gbxEdit
             // 
+            this.gbxEdit.Controls.Add(this.cmbBookId);
             this.gbxEdit.Controls.Add(this.txtGenreEdit);
             this.gbxEdit.Controls.Add(this.lblGenreEdit);
             this.gbxEdit.Controls.Add(this.btnDelete);
@@ -178,7 +180,6 @@ namespace Library_System
             this.gbxEdit.Controls.Add(this.txtTitleEdit);
             this.gbxEdit.Controls.Add(this.lblAuthorEdit);
             this.gbxEdit.Controls.Add(this.lblTitleEdit);
-            this.gbxEdit.Controls.Add(this.txtBookId);
             this.gbxEdit.Controls.Add(this.lblBokId);
             this.gbxEdit.Location = new System.Drawing.Point(349, 263);
             this.gbxEdit.Name = "gbxEdit";
@@ -211,6 +212,7 @@ namespace Library_System
             this.btnDelete.TabIndex = 11;
             this.btnDelete.Text = "DELETE";
             this.btnDelete.UseVisualStyleBackColor = true;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
             // btnUpdate
             // 
@@ -220,6 +222,7 @@ namespace Library_System
             this.btnUpdate.TabIndex = 10;
             this.btnUpdate.Text = "UPDATE";
             this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
             // 
             // cbxAvailableEdit
             // 
@@ -263,13 +266,6 @@ namespace Library_System
             this.lblTitleEdit.TabIndex = 4;
             this.lblTitleEdit.Text = "TITLE:";
             // 
-            // txtBookId
-            // 
-            this.txtBookId.Location = new System.Drawing.Point(104, 31);
-            this.txtBookId.Name = "txtBookId";
-            this.txtBookId.Size = new System.Drawing.Size(100, 20);
-            this.txtBookId.TabIndex = 3;
-            // 
             // lblBokId
             // 
             this.lblBokId.AutoSize = true;
@@ -278,6 +274,15 @@ namespace Library_System
             this.lblBokId.Size = new System.Drawing.Size(54, 13);
             this.lblBokId.TabIndex = 2;
             this.lblBokId.Text = "BOOK ID:";
+            // 
+            // cmbBookId
+            // 
+            this.cmbBookId.FormattingEnabled = true;
+            this.cmbBookId.Location = new System.Drawing.Point(104, 31);
+            this.cmbBookId.Name = "cmbBookId";
+            this.cmbBookId.Size = new System.Drawing.Size(121, 21);
+            this.cmbBookId.TabIndex = 14;
+            this.cmbBookId.SelectedIndexChanged += new System.EventHandler(this.cmbBookId_SelectedIndexChanged);
             // 
             // FrmBookManager
             // 
@@ -326,7 +331,7 @@ namespace Library_System
         private System.Windows.Forms.TextBox txtTitleEdit;
         private System.Windows.Forms.Label lblAuthorEdit;
         private System.Windows.Forms.Label lblTitleEdit;
-        private System.Windows.Forms.TextBox txtBookId;
         private System.Windows.Forms.Label lblBokId;
+        private System.Windows.Forms.ComboBox cmbBookId;
     }
 }
